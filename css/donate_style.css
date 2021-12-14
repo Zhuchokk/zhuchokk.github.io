@@ -1,0 +1,102 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	color: black;
+}
+p{
+	font-size: 17px;
+}
+body{
+	margin: 0;
+	background-color: white;
+}
+.container{
+	margin: 0px auto;
+	padding-right: 6%;
+	padding-left: 6%;
+}
+header b{
+	font-size: 35px;
+}
+header li{
+	display: inline-block;
+	padding-right: 25px;
+}
+header a{
+	transition: all 0.7s;
+	text-decoration: none;
+	font-size: 25px;
+	letter-spacing: 0;
+}
+header a:hover{
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	letter-spacing: 3px;
+}
+button{
+	padding: 5px;
+	margin-top: 15px;
+	transition: all 0.7s;
+}
+button:hover{
+	color: white;
+	background-color: black !important; 
+}
+header nav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	
+}
+main h2{
+	text-align: center;
+	margin: auto 40px;
+	font-size: 40px;
+}
+main .card{
+	margin-top: 30px;
+	text-align: center;
+	padding: 20px;
+	border: 2px solid black;
+}
+main .card p{
+	margin-top: 15px;
+	font-size: 30px;
+}
+main .card button{
+	font-size: 30px;
+	background-color: white;
+	border: 2px solid black;
+}
+@media screen and (max-width: 768px){
+	p {
+		font-size: 16px !important;
+	}
+	span {
+		font-size: 30px !important;
+	}
+	h1 {
+		font-size: 1.5em !important;
+	}
+	h2 {
+		font-size: 1.5em !important;	
+	}
+	a {
+		font-size: 1.3em !important;
+	}
+	b {
+		font-size: 1.3em !important;
+	}
+	main .container{
+		grid-template-columns: 1fr;
+	}
+	main img{
+		display: none;
+	}
+	header ul{
+		padding-left: 20px;
+	}
+}

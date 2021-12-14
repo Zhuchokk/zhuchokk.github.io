@@ -1,0 +1,126 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	color: black;
+}
+p, td{
+	font-size: 20px;
+}
+body{
+	margin: 0;
+	background-color: white;
+}
+.container{
+	margin: 0px auto;
+	padding-right: 6%;
+	padding-left: 6%;
+}
+header b{
+	font-size: 35px;
+}
+header li{
+	display: inline-block;
+	padding-right: 25px;
+}
+header a{
+	transition: all 0.7s;
+	text-decoration: none;
+	font-size: 25px;
+	letter-spacing: 0;
+}
+header a:hover{
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	letter-spacing: 3px;
+}
+header nav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	
+}
+main section.description h3{
+	font-size: 35px;
+}
+main section.description p{
+	padding-bottom: 15px;
+}
+main section.description span{
+	font-size: 16px;
+	font-style: italic;
+}
+main section.description{
+	margin-top: 20px;
+	padding: 20px;
+	text-align: left;
+	border: 2px solid rgba(0, 0, 0, 0.7);
+	box-shadow: -15px -15px 15px rgba(0, 0, 0, 0.5);	
+}
+th, td {
+   border: 1px solid black;
+   text-align: center;
+   padding: 15px;
+}
+th{
+	font-size: 25px;
+}
+main section.price_list table{
+	border-spacing: 5px;
+	table-layout: auto;
+	margin-top: 30px !important;
+	border: 1px solid black;
+	margin: auto;
+}
+footer .container{
+	text-align: center;
+	padding-top: 30px;
+}
+footer img{
+	width: 30px;
+	height: 30px;
+	padding-right: 15px;
+}
+footer p{
+	padding-top: 10px;
+	font-size: 15px;
+}
+@media screen and (max-width: 550px){
+	p {
+		font-size: 16px !important;
+	}
+	span {
+		font-size: 13px !important;
+	}
+	h1 {
+		font-size: 1.5em !important;
+	}
+	h3 {
+		font-size: 1.5em !important;	
+	}
+	th {
+		padding: 5px 0px!important;
+		font-size: 17px !important;
+	}
+	td {
+		padding: 5px 0px !important;
+		font-size: 12px !important;
+	}
+	a {
+		font-size: 1.3em !important;
+	}
+	b {
+		font-size: 1.3em !important;
+	}
+	main .container{
+		grid-template-columns: 1fr;
+	}
+	main img{
+		display: none;
+	}
+	header ul{
+		padding-left: 20px;
+	}
+}
