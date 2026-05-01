@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0a;
+  transition: background 2s ease;
+  color: #ccc;
+  font-family: 'Special Elite', cursive;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+}
+
+.question {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+input, button {
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 2px solid #555;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.2s;
+}
+
+button {
+  cursor: pointer;
+  background: rgba(255,255,255,0.05);
+}
+
+button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+input:focus {
+  border-color: #999;
+}
+
+.warning-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  color: #ff4444;
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  animation: shake 0.5s ease-in-out;
+  z-index: 999;
+  pointer-events: none;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-48%, -50%); }
+  75% { transform: translate(-52%, -50%); }
+}
+
+.Slight_tremble {
+  animation: Slight_tremble 0.2s linear infinite;
+}
+
+@keyframes Slight_tremble {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -1px); }
+  75% { transform: translate(-1px, -2px); }
+  100% { transform: translate(1px, 1px); }
+}
+
+/* Тряска для вопроса (сцена 7) */
+.Hard_tremble {
+  animation: Hard_tremble 0.1s linear infinite;
+}
+
+@keyframes Hard_tremble {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 6px); }
+  50% { transform: translate(6px, -3px); }
+  75% { transform: translate(-3px, -6px); }
+  100% { transform: translate(3px, 3px); }
+}
+
+.ball {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ff5555, #550000);
+  border-radius: 50%;
+  z-index: 30;
+  pointer-events: none;
+  top: -20px;
+  animation: fall 2s linear forwards;
+}
+
+@keyframes fall {
+  0% { top: -20px; opacity: 1; }
+  100% { top: 110vh; opacity: 0; }
+}
+
+.overlay-locked {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: transparent;
+  pointer-events: all;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+.card {
+  background: rgba(20,20,20,0.9);
+  border: 1px solid #444;
+  padding: 2rem;
+  margin-top: 2rem;
+  display: inline-block;
+  text-align: left;
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #fff;
+}
+.card p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+/* Парящая карточка */
+.card {
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(0.5deg); }
+  75% { transform: translateY(4px) rotate(-0.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Canvas для звёзд */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Слой с плавно появляющимся градиентом */
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 70%);
+  opacity: 0;
+  transition: opacity 3s ease;
+  z-index: -1; /* позади контента, но поверх body */
+  pointer-events: none;
+}
