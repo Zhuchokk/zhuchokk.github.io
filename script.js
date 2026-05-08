@@ -167,6 +167,9 @@ function createEyes() {
 }
 
 function renderScene3() {
+  // Очищаем контейнер перед рендером
+  app.innerHTML = '';
+
   const question = document.createElement('div');
   question.className = 'question';
   question.textContent = 'What number is playing in your head right now?';
@@ -178,14 +181,30 @@ function renderScene3() {
   app.appendChild(input);
   input.focus();
 
+  let isProcessing = false;
+
   input.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter') return;
+    if (isProcessing) return;
+
+    let number = parseInt(input.value, 10);
+    if (isNaN(number) || number < 0) return;
+
+    if (number === 0) {
+      isProcessing = true;
+      question.textContent = "I do not like zero, because you can not divide by it, so choose another number";
+      input.remove();
+      setTimeout(() => {
+        renderScene3();
+      }, 3000);
+      return;
+    }
+
     if (!checkCooldown()) {
       showWarning();
       return;
     }
-    let number = parseInt(input.value, 10);
-    if (isNaN(number) || number < 0) return;
+
     if (number > 100) number = 100;
 
     input.style.display = 'none';
